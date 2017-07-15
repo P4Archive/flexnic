@@ -1,0 +1,103 @@
+{
+    "registers": {
+        "configs": []
+    }, 
+    "tables": {
+        "key_tbl": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "fwd_act", 
+                        "data": {
+                            "prt": {
+                                "value": "v0.1"
+                            }
+                        }
+                    }, 
+                    "name": "s2", 
+                    "match": {
+                        "key_data.core": {
+                            "value": "1"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "type": "fwd_act", 
+                        "data": {
+                            "prt": {
+                                "value": "v0.2"
+                            }
+                        }
+                    }, 
+                    "name": "s3", 
+                    "match": {
+                        "key_data.core": {
+                            "value": "2"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "type": "fwd_act", 
+                        "data": {
+                            "prt": {
+                                "value": "v0.3"
+                            }
+                        }
+                    }, 
+                    "name": "s4", 
+                    "match": {
+                        "key_data.core": {
+                            "value": "3"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "type": "fwd_act", 
+                    "data": {
+                        "prt": {
+                            "value": "v0.0"
+                        }
+                    }
+                }, 
+                "name": "s1"
+            }
+        }, 
+        "io_tbl": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "key_act"
+                    }, 
+                    "name": "in", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "p0"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "type": "fwd_act", 
+                    "data": {
+                        "prt": {
+                            "value": "p0"
+                        }
+                    }
+                }, 
+                "name": "out"
+            }
+        }
+    }, 
+    "parser_value_sets": {
+        "configs": []
+    }, 
+    "multicast": {}, 
+    "meters": {
+        "configs": []
+    }
+}
